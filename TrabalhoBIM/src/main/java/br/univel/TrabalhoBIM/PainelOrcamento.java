@@ -78,6 +78,12 @@ public class PainelOrcamento extends JPanel {
 		panel.add(btnAdicionar, gbc_btnAdicionar);
 		
 		JButton btnExportarPdf = new JButton("Exportar PDF");
+		btnExportarPdf.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Relatorio r = new Relatorio();
+				r.exportar(prodOrcamento);
+			}
+		});
 		GridBagConstraints gbc_btnExportarPdf = new GridBagConstraints();
 		gbc_btnExportarPdf.insets = new Insets(0, 0, 5, 0);
 		gbc_btnExportarPdf.gridx = 1;
